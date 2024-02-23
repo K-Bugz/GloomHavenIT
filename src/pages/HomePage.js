@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PageSelect from '../components/PageSelect';
-import StatsPage from './StatsPage'; // add prior data
-import ScenarioPage from './ScenarioPage'; // add new battle
 import CharacterList from '../components/CharactersList';
 
-
-
-
 export default function HomePage() {
-    const [currentPage, setCurrentPage] = useState('Home');
-    const handlePageChange = (page) => setCurrentPage(page);
-
-    
-    useEffect(() => { document.title = `${currentPage} | My Website`}, [currentPage]);
 
     return (
     <MainContainer> 
@@ -21,7 +11,9 @@ export default function HomePage() {
             <h1>GloomHaven Initiative Tracker</h1>
         </TitleContainer>
         <CharacterList/>
-        <PageSelect currentPage={currentPage} handlePageChange={handlePageChange}/>
+        <PageSelectContainer>
+            <PageSelect/> 
+        </PageSelectContainer>
     </MainContainer>
   );
 }
@@ -37,18 +29,16 @@ const TitleContainer = styled.div`
     width: 50%;
     max-width: 90%;
     margin: auto;
-    background-color: #777574;
+    background-color: #267eff;
+    border: 2px solid white;
     border-radius: 10px;
-    border-color: white;
-    
     h1 { 
         font-size: 2.69vw;
-        text-shadow: 0 0 3px #d08d24, 0 0 5px #0000FF;
+        text-shadow: 0 0 3px #00ffce, 0 0 5px #c20eff;
     }`
 
-
-const PartyContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    width: 100%;`
+const PageSelectContainer = styled.div`
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+`

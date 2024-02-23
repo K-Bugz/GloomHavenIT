@@ -12,16 +12,16 @@ function CharacterCard(props) {
 const CharContainer = styled.div`
 display: flex;
 flex-direction:column;
-width: 8.8vw;
+width: 120px;
+height: 190px;
 border: 2px solid white;
 border-radius: 10px;
-margin: 0px 7px 0px 7px;`
+margin: 0px 10px 10px 10px;`
 
 const CharName = styled.h2`
-font-size: 29px;
+font-size: 20px;
 text-align: center;
-height: 10px;
-width: 169px;
+width: auto;
 height: 35px;
 background-color: #201a15;
 color: white;
@@ -29,8 +29,8 @@ border-top-left-radius: 10px;
 border-top-right-radius: 10px;`
 
 const CharacterImage = styled.img`
-width: 169px;
-height: 236px;
+width: 120px;
+height: 190px;
 border-bottom-left-radius: 10px;
 border-bottom-right-radius: 10px;`
 

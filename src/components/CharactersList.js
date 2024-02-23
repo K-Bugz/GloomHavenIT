@@ -31,13 +31,30 @@ function CharacterList(props) {
         style: 'Tank'
        },
        {
-        name: 'Valrath Sunkeeper',
+        name: 'Valrath',
         race: 'Valrath',
         class: 'Sunkeeper',
         src: 'https://gloomhaven.smigiel.us/public/images/byid/78.portrait.webp',
         logo: 'http://www.w3.org/2000/svg', // need to update
         style: 'Healing Support'
-       }]
+       },
+       {
+        name: 'Aerith',
+        race: 'Human',
+        class: 'Void Warden',
+        src: 'https://gloomhaven.smigiel.us/public/images/byid/94.portrait.webp',
+        logo: 'http://www.w3.org/2000/svg',// need to update
+        style: 'High Damage'
+       },
+       {
+        name: 'TBD',
+        race: 'Quatryl',
+        class: 'Soothsinger',
+        src: 'https://gloomhaven.smigiel.us/public/images/byid/84.portrait.webp',
+        logo: 'http://www.w3.org/2000/svg',// need to update
+        style: 'Bad@$$ Support!'
+       },
+      ]
 
 
   return (
@@ -48,13 +65,14 @@ function CharacterList(props) {
 }
 
 const CharactersContainer = styled.div`
-margin-top: 21px;
+margin-top: 23px;
 font-size: large;
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
 border: 5px;
 border-radius: 6px;
+margin-bottom: 19px;
 
 :hover {
   border-radius: 6px;

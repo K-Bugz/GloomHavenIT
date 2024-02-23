@@ -1,54 +1,62 @@
-import React from 'react';
-import useSound from 'use-sound';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ff7Menu from '../resources/FF7-cursor-move.mp3';
 
-// const pageComponents = { Home: HomePage, Scenario: ScenarioPage , Stats: StatsPage };
 
 function PageSelect(props) {
-  console.log(props)
-  const [play] = useSound('https://alexpatterson.dev/sounds/cat_purr.mp3');
+  console.log(props);
+  const [audio] = useState(new Audio(ff7Menu));
+  const playSound = () => {
+    audio.play();
+  };
 
   return (
     <MenuContainer>
       <MenuItems>
-        <MenuItem onClick={play}>
-          <MenuLink href="#scenario" onClick={() => props.handlePageChange('Scenario')} className={props.currentPage === 'Scenario' ? 'nav-link active' : 'nav-item'}>
+        <MenuItem onClick={playSound}>
+          <MenuLink href="scenario">
             Start New Scenario
           </MenuLink>
         </MenuItem>
-        <MenuItem onClick={play}>
-          <MenuLink href="#stats" onClick={() => props.handlePageChange('Stats')} className={props.currentPage === 'Stats' ? 'nav-link active' : 'nav-item'}>
-          Stats
+        <MenuItem onClick={playSound}>
+          <MenuLink href="stats">
+            View Old Stats
           </MenuLink>
         </MenuItem>
-    </MenuItems>
+      </MenuItems>
     </MenuContainer>
   );
 }
 
-const MenuContainer = styled.div``
-
-const MenuItems = styled.div`
+const MenuContainer = styled.div`
+display: flex;
+flex-wrap: wrap;  
+align-items: center;
+`
+// padding: 10px 32%; // dont know if I need
+const MenuItems = styled.ul`
+  width: 359px;
+  border-radius: 10px;
+  border: 3px solid white;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 3px 30%;
+  align-items: flex-start;
   list-style-type: none;
-  text-decoration: none;`
+  text-decoration: none;
+  // width: 25%;
+  box-sizing: border-box;`
 
-/* if we want to add a hover effect to the menu select
-  //   :hover {
-    // border-radius: 6px;
-    // background-color: yellow;} */
-  const MenuItem = styled.li`
-  font-size: large;
+const MenuItem = styled.li`
+  font-size: 42px;
   margin: 10px;
+  flex: 1 0 21%;
+  :hover {
+    background-color: black;}
 `
 
-// background-color: rgba(254, 255, 255, 0.836);
 const MenuLink = styled.a`
 color: white;  
 padding: 1px;
